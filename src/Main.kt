@@ -56,3 +56,18 @@ fun registrarGasto(
 
     println("¡Gasto registrado exitosamente!")
 }
+fun mostrarGastos(
+    conceptos: List<String>,
+    categorias: List<String>,
+    montos: List<Double>
+) {
+    println("\nGASTOS REGISTRADOS")
+
+    if (conceptos.isEmpty()) {
+        println("Todavía no hay gastos registrados.")
+    } else {
+        for (i in conceptos.indices) {
+            println("${i + 1}. ${conceptos[i]} | ${categorias[i]} | $${montos[i]}")
+        }
+    }
+}
