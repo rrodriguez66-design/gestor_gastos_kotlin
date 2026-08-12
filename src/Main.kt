@@ -54,7 +54,7 @@ fun registrarGasto(
     categorias.add(categoriaSeleccionada)
     montos.add(monto)
 
-    println("¡Gasto registrado exitosamente!")
+    println("Gasto registrado exitosamente")
 }
 fun mostrarGastos(
     conceptos: List<String>,
