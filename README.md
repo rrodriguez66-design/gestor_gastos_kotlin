@@ -1,17 +1,22 @@
 Román Rodríguez Castro
 
-1. ¿Qué diferencia encontró entre commit y push?
-La diferencia principal radica en dónde se guarda el historial de los cambios.
-Un commit funciona como un "punto de guardado" que registra las modificaciones de mi código junto con un mensaje explicativo,
-pero esto ocurre única y exclusivamente de forma local en mi computadora. Por otro lado, el push es la acción de tomar todos esos
-commits locales y enviarlos a los servidores de GitHub (la nube); es el paso indispensable para respaldar mi avance y permitir
-que mis compañeros de equipo puedan ver y descargar mis aportaciones.
+¿Qué diferencia encontró entre commit y push?
+Un commit funciona como un punto de guardado de los cambios en mi propia computadora (local). Registra las modificaciones en el historial, pero nadie más puede verlas. Por otro lado, un push toma todos esos cambios locales y los sube a la nube (GitHub), lo cual es el paso indispensable para que mi compañero de equipo pueda ver, revisar y descargar mis aportaciones.
 
-3. ¿Para qué sirve trabajar en ramas?
-Trabajar en ramas sirve para crear entornos de desarrollo totalmente aislados. Me permite construir nuevas características (como lo
-hice en mi rama registro-gastos) sin correr el riesgo de dañar el código estable de la línea principal (master). Para mis futuros
-proyectos de ingeniería, entiendo que esta herramienta es vital porque permite que varias personas colaboremos en el mismo software
-al mismo tiempo sin estorbarnos, manteniendo el control de calidad mediante revisiones antes de fusionar cualquier código nuevo.
+¿Por qué debe hacerse pull antes de comenzar a modificar archivos?
+Es indispensable para descargar la versión más reciente del código que está en la nube a mi computadora local. Si no hago pull antes de programar, corro el riesgo de trabajar sobre un código desactualizado, lo que inevitablemente generará un conflicto de fusión al intentar subir mis cambios (exactamente como nos pasó durante la práctica).
+
+¿Para qué sirve trabajar en ramas?
+Sirve para crear espacios de trabajo completamente aislados. Nos permitió que mi compañero y yo programáramos al mismo tiempo distintas partes de la aplicación (yo en mi rama registro-gastos y él en analisis-gastos) sin estorbarnos y sin afectar el código estable de la rama principal (master). Es fundamental para mantener el orden y la calidad del código antes de fusionarlo.
+
+¿Qué ocasionó el conflicto?
+El conflicto se originó porque mi compañero y yo modificamos el mismo archivo (src/Main.kt) en las mismas líneas. Al momento en que él subió su código, omitió hacer un paso de sincronización previo (pull y merge local) para descargar mis funciones. Por lo tanto, GitHub detectó que nuestras dos versiones del archivo chocaban y bloqueó la fusión automática.
+
+¿Cómo decidió qué código conservar?
+Decidí conservar ambas versiones del código porque eran complementarias y necesarias para el programa. Utilicé la herramienta de resolución de conflictos de GitHub y seleccioné la opción de aceptar ambos cambios (Accept both changes). De esta manera, el archivo final mantuvo mis funciones de registro intactas y acomodó la función matemática de mi compañero justo debajo, sin borrar el trabajo de ninguno.
+
+¿Qué aportó personalmente al programa?
+Fui responsable de programar las funciones registrarGasto (incluyendo la validación de montos y menús de categorías) y mostrarGastos. Además, me encargué de realizar la revisión técnica del Pull Request, solucionar el conflicto de código directamente en GitHub y agregar el menú interactivo con el ciclo while en la función main para integrar todo el trabajo y lograr que la aplicación fuera 100% funcional.
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------
