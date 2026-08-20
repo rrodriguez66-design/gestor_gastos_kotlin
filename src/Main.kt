@@ -1,5 +1,31 @@
 fun main() {
-    println("Gestor semanal de gastos")
+    val conceptos = mutableListOf<String>()
+    val categorias = mutableListOf<String>()
+    val montos = mutableListOf<Double>()
+    var salir = false
+
+    while (!salir) {
+        println("\n=== GESTOR SEMANAL DE GASTOS ===")
+        println("1. Registrar nuevo gasto")
+        println("2. Mostrar gastos registrados")
+        println("3. Ver total gastado")
+        println("4. Salir")
+        print("Elige una opción: ")
+
+        when (readln()) {
+            "1" -> registrarGasto(conceptos, categorias, montos)
+            "2" -> mostrarGastos(conceptos, categorias, montos)
+            "3" -> {
+                val total = calcularTotal(montos)
+                println("El monto total gastado en la semana es: $$total")
+            }
+            "4" -> {
+                println("¡Hasta luego!")
+                salir = true
+            }
+            else -> println("Opción no válida. Intenta de nuevo.")
+        }
+    }
 }
 
 fun calcularTotal(montos: List<Double>): Double {
